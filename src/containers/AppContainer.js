@@ -9,18 +9,13 @@ class AppContainer extends Container {
       tagline: 'I get excited about cooking, running, cycling, reading, and JavaScript. My favorite CSS color is ',
       email: 'garethbk@gmail.com',
       phone: '540 454 7597',
-      loadedRoute: ''
-
-      /* this.history.push({
-          pathname: '/contact'
-        }); */
+      loadedRoute: '/'
     };
   }
-  goToRoute = input => {
+  setRoute = input => {
     this.setState({
       loadedRoute: input
     });
-    //this.state.goToContact = this.state.goToContact.bind(this);
   };
 }
 
