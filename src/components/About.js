@@ -55,7 +55,7 @@ export default class About extends Component {
                         <a href="https://svelte.technology/" target="_blank">
                           Svelte
                         </a>{' '}
-                        is also really intriguing me, and I'm stoked to see how it influences the future of front-end
+                        is really intriguing me, and I'm stoked to see how it influences the future of front-end
                         development.
                       </PrimaryText>
                       <PrimaryText>
