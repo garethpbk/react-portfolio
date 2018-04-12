@@ -8,6 +8,7 @@ class AppContainer extends Container {
       email: 'garethbk@gmail.com',
       phone: '540 454 7597',
       loadedRoute: 'Home',
+      skillDisplay: true,
       about: { name: 'Gareth Bk', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/gbk-chicken.jpg' },
       skills: [
         { skill: 'HTML5', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/html5-logo.png' },
@@ -51,9 +52,21 @@ class AppContainer extends Container {
     };
   }
   setRoute = input => {
-    input = input.charAt(1).toUpperCase() + input.slice(2);
+    if (input === undefined) {
+      input = '/';
+    }
+    if (input !== '/') {
+      input = input.charAt(1).toUpperCase() + input.slice(2);
+    }
     this.setState({
       loadedRoute: input
+    });
+  };
+
+  toggleSkillDisplay = input => {
+    console.log('aye');
+    this.setState({
+      skillDisplay: !this.state.skillDisplay
     });
   };
 }

@@ -10,12 +10,43 @@ const HeightContainer = styled.div`
   background-size: 100%;
 `;
 
-const FlexContainer = styled.div`
+export const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+  > h1 {
+    font-size: 3rem;
+    margin: 0 0 1em 0;
+  }
+`;
+
+export const ContentContainer = styled.div`
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+`;
+
+export const CenterAdjust = styled.div`
+  text-align: center;
+  width: 100%;
+`;
+
+export const DisplayInlineBlock = {
+  display: 'inline-block'
+};
+
+export const PrimaryText = styled.p`
+  padding: 10px 25px;
+
+  > a {
+    color: steelblue;
+    font-weight: 800;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Jumbotron = styled.div`
@@ -60,7 +91,7 @@ const StyledLink = styled.a`
   }
 `;
 
-const RouteButton = styled.button`
+export const RouteButton = styled.button`
   border: 0px solid black;
   padding: 15px 20px;
   margin: 0 auto;
@@ -93,6 +124,9 @@ const RouteButton = styled.button`
     &:before {
       visibility: visible;
       transform: scaleX(1);
+    }
+    > .rotate-left {
+      transform: rotate(270deg);
     }
     > .rotate-right {
       transform: rotate(90deg);
