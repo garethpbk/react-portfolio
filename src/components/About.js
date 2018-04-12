@@ -44,7 +44,7 @@ export default class About extends Component {
                     </Col>
                     <Col xs={7}>
                       <PrimaryText>
-                        Born and raised in Northern Virgnia, I'm now located in San Diego. I enjoy utilizing the power
+                        Born and raised in Northern Virginia, I'm now located in San Diego. I enjoy utilizing the power
                         of modern web technology to build unique and accessible user experiences. Currently I work
                         primarily in React, but I'm looking to branch out into alternatives (and build more stuff in
                         plain ol' JS). I'm into{' '}
