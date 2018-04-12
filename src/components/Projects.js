@@ -35,7 +35,7 @@ export default class Projects extends Component {
               <h1>~ Skills & Projects ~</h1>
               <ContentContainer>
                 <CenterAdjust>
-                  <PrimaryText>
+                  {/* <PrimaryText>
                     Here are some tools I build with and things I have built with them. I consider myself fairly decent
                     at picking up new tech and hope to see more pretty logos added here soon. I host on{' '}
                     <a href="https://www.digitalocean.com/" target="_blank">
@@ -63,20 +63,20 @@ export default class Projects extends Component {
                     <a href="https://redux.js.org/" target="_blank">
                       Redux
                     </a>).
-                  </PrimaryText>
+                  </PrimaryText> */}
                   <RouteButton onClick={appState.toggleSkillDisplay}>TOGGLE</RouteButton>
                 </CenterAdjust>
                 <Grid>
                   <Row style={{ marginTop: '25px' }}>
                     {appState.state.skillDisplay
                       ? appState.state.skills.map((skill, i) => (
-                          <Col xs={4} md={2}>
-                            <LoneSkill key={i} img={skill.img} />
+                          <Col key={i} xs={4} md={2}>
+                            <LoneSkill img={skill.img} />
                           </Col>
                         ))
                       : appState.state.projects.map((project, i) => (
-                          <Col xs={6} md={4} style={{ marginTop: '10px' }}>
-                            <LoneProject key={i} name={project.name} desc={project.desc} img={project.img} />
+                          <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
+                            <LoneProject name={project.name} desc={project.desc} img={project.img} url={project.url} />
                           </Col>
                         ))}
                   </Row>

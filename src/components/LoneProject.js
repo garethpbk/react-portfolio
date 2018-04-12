@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ProjectContainer = styled.div`
+const ProjectContainer = styled.a`
   width: 100%;
+  display: block;
 
   > img {
     max-width: 100%;
@@ -11,7 +12,7 @@ const ProjectContainer = styled.div`
 
 const LoneProject = props => {
   return (
-    <ProjectContainer>
+    <ProjectContainer href={props.url} target="_blank">
       <img src={props.img} alt={props.name} />
     </ProjectContainer>
   );
