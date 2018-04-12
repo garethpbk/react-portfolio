@@ -36,8 +36,11 @@ export default class Projects extends Component {
               <ContentContainer>
                 <CenterAdjust>
                   <PrimaryText>
-                    Here are some tools I build with. I consider myself fairly decent at picking up new tech and hope to
-                    see more pretty logos added here soon.
+                    Here are some tools I build with and things I have built with them. I consider myself fairly decent
+                    at picking up new tech and hope to see more pretty logos added here soon. I host on{' '}
+                    <a href="https://www.digitalocean.com/" target="_blank">
+                      DigitalOcean
+                    </a>.
                   </PrimaryText>
                   <PrimaryText>
                     The eventual goal here is to have a list of projects filterable by skill. For now, you can click the
