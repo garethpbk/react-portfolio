@@ -1,28 +1,143 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background-image: url('https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/bird-bg.jpg ');
+  background-color: red;
+  background-size: cover;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Eczar', serif;
+}
+
+a,
+p,
+button,
+span {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.transition-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.transition-wrapper .transition-item {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/* All transitions */
+.transitioned-component-up,
+.transitioned-component-right,
+.transitioned-component-down {
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+/* Right transitions */
+.transitioned-component-right.transition-appear {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.transitioned-component-right.transition-leave.transition-leave-active {
+  opacity: 0;
+  transform: translate3d(100%, 0, 0);
+}
+
+.transitioned-component-right.transition-appear.transition-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.transitioned-component-right.transition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Up transitions */
+.transitioned-component-up.transition-appear {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.transitioned-component-up.transition-leave.transition-leave-active {
+  opacity: 0;
+  transform: translate3d(0, -100%, 0);
+}
+
+.transitioned-component-up.transition-appear.transition-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.transitioned-component-up.transition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Down transitions */
+.transitioned-component-down.transition-appear {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+.transitioned-component-down.transition-leave.transition-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+
+.transitioned-component-down.transition-appear.transition-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.transitioned-component-down.transition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.list-page {
+  overflow: auto;
+  box-sizing: border-box;
   padding: 20px;
-  color: white;
+  height: 100vh;
+  background-color: #fff;
+  transition: transform 0.25s, opacity 0.25s;
+  transform: translate3d(0, 0, 0);
 }
 
-.App-title {
-  font-size: 1.5em;
+.list-page.transition-appear {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
 }
 
-.App-intro {
-  font-size: large;
+.list-page.transition-appear.transition-appear-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.list-page.transition-leave {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.list-page.transition-leave.transition-leave-active {
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
 }
