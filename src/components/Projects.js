@@ -64,7 +64,9 @@ export default class Projects extends Component {
                       Redux
                     </a>).
                   </PrimaryText> */}
-                  <RouteButton onClick={appState.toggleSkillDisplay}>TOGGLE</RouteButton>
+                  <RouteButton onClick={appState.toggleSkillDisplay}>
+                    TOGGLE<span className="rotate-up">▲</span>
+                  </RouteButton>
                 </CenterAdjust>
                 <Grid>
                   <Row style={{ marginTop: '25px' }}>
