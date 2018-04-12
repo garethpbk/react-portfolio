@@ -8,7 +8,8 @@ import { FlexContainer, ContentContainer, RouteButton, CenterAdjust, DisplayInli
 
 const HeightContainer = styled.div`
   height: 100vh;
-  background-color: rgba(255, 99, 71, 0.75);
+  /* background-color: rgba(255, 99, 71, 0.75); */
+  background-color: rgba(205, 133, 63, 0.75);
 `;
 
 export default class Contact extends Component {
