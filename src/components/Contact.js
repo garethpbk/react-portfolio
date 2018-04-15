@@ -4,13 +4,15 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AppContainer from '../containers/AppContainer';
 
-import { FlexContainer, ContentContainer, RouteButton, CenterAdjust, DisplayInlineBlock, PrimaryText } from './Landing';
-
-const HeightContainer = styled.div`
-  height: 100vh;
-  /* background-color: rgba(255, 99, 71, 0.75); */
-  background-color: rgba(205, 133, 63, 0.75);
-`;
+import {
+  HeightContainer,
+  FlexContainer,
+  ContentContainer,
+  RouteButton,
+  CenterAdjust,
+  DisplayInlineBlock,
+  PrimaryText
+} from './StyleBase';
 
 export default class Contact extends Component {
   constructor() {
@@ -29,10 +31,10 @@ export default class Contact extends Component {
     return (
       <Subscribe to={[AppContainer]}>
         {appState => (
-          <HeightContainer className="transition-item transitioned-component-up">
+          <HeightContainer className="transition-item transitioned-component-up" bgColor="rgba(205, 133, 63, 0.75);">
             <FlexContainer>
-              <h1>~ Get In Touch ~</h1>
               <ContentContainer>
+                <h1>Talk To Me</h1>
                 <Grid>
                   <Row>
                     <CenterAdjust>
