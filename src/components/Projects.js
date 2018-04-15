@@ -4,14 +4,17 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AppContainer from '../containers/AppContainer';
 
-import { FlexContainer, ContentContainer, RouteButton, CenterAdjust, DisplayInlineBlock, PrimaryText } from './Landing';
+import {
+  HeightContainer,
+  FlexContainer,
+  ContentContainer,
+  RouteButton,
+  CenterAdjust,
+  DisplayInlineBlock,
+  PrimaryText
+} from './StyleBase';
 import LoneProject from './LoneProject';
 import LoneSkill from './LoneSkill';
-
-const HeightContainer = styled.div`
-  height: 100vh;
-  background-color: rgba(70, 130, 180, 0.75);
-`;
 
 export default class Projects extends Component {
   constructor() {
@@ -30,10 +33,10 @@ export default class Projects extends Component {
     return (
       <Subscribe to={[AppContainer]}>
         {appState => (
-          <HeightContainer className="transition-item transitioned-component-right">
+          <HeightContainer className="transition-item transitioned-component-right" bgColor="rgba(70, 130, 180, 0.75);">
             <FlexContainer>
-              <h1>~ Skills & Projects ~</h1>
               <ContentContainer>
+                <h1>~ Skills & Projects ~</h1>
                 <CenterAdjust>
                   {/* <PrimaryText>
                     Here are some tools I build with and things I have built with them. I consider myself fairly decent

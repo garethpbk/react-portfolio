@@ -4,12 +4,15 @@ import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AppContainer from '../containers/AppContainer';
 
-import { FlexContainer, ContentContainer, RouteButton, CenterAdjust, DisplayInlineBlock, PrimaryText } from './Landing';
-
-const HeightContainer = styled.div`
-  height: 100vh;
-  background-color: rgba(175, 238, 238, 0.75);
-`;
+import {
+  HeightContainer,
+  FlexContainer,
+  ContentContainer,
+  RouteButton,
+  CenterAdjust,
+  DisplayInlineBlock,
+  PrimaryText
+} from './StyleBase';
 
 const AboutImage = styled.img`
   max-width: 100%;
@@ -33,16 +36,16 @@ export default class About extends Component {
     return (
       <Subscribe to={[AppContainer]}>
         {appState => (
-          <HeightContainer className="transition-item transitioned-component-down">
+          <HeightContainer className="transition-item transitioned-component-down" bgColor="rgba(175, 238, 238, 0.75)">
             <FlexContainer>
-              <h1>~ All About Me ~</h1>
               <ContentContainer>
+                <h1>Hey There!</h1>
                 <Grid>
                   <Row>
-                    <Col xs={5}>
+                    <Col xs={12} md={5}>
                       <AboutImage src={appState.state.about.img} alt={appState.state.about.name} />
                     </Col>
-                    <Col xs={7}>
+                    <Col xs={12} md={7}>
                       <PrimaryText>
                         Born and raised in Northern Virginia, I'm now located in San Diego. I enjoy utilizing the power
                         of modern web technology to build unique and accessible user experiences. Currently I work

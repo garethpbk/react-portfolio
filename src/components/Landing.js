@@ -3,54 +3,18 @@ import { Subscribe } from 'unstated';
 import styled from 'styled-components';
 import AppContainer from '../containers/AppContainer';
 
-const HeightContainer = styled.div`
-  height: 100vh;
-  background-color: peru;
-  background-image: url('https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/bird-bg.jpg');
-  background-size: 100%;
-`;
-
-export const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  > h1 {
-    font-size: 3rem;
-    margin: 0 0 1em 0;
-  }
-`;
-
-export const ContentContainer = styled.div`
-  background-color: rgba(255, 255, 255, 0.75);
-  padding: 10px;
-`;
-
-export const CenterAdjust = styled.div`
-  text-align: center;
-  width: 100%;
-`;
-
-export const DisplayInlineBlock = {
-  display: 'inline-block'
-};
-
-export const PrimaryText = styled.p`
-  padding: 10px 25px;
-
-  > a {
-    color: steelblue;
-    font-weight: 800;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
+import {
+  HeightContainer,
+  FlexContainer,
+  ContentContainer,
+  CenterAdjust,
+  DisplayInlineBlock,
+  PrimaryText,
+  RouteButton
+} from './StyleBase';
 
 const Jumbotron = styled.div`
-  padding: 50px;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.75);
   text-align: center;
   > h1 {
@@ -59,6 +23,14 @@ const Jumbotron = styled.div`
   }
   > p {
     margin: 0 0 1em 0;
+  }
+
+  @media (min-width: 768px) {
+    padding: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 50px;
   }
 `;
 
@@ -87,55 +59,6 @@ const StyledLink = styled.a`
     &:before {
       visibility: visible;
       transform: scaleX(1);
-    }
-  }
-`;
-
-export const RouteButton = styled.button`
-  border: 0px solid black;
-  padding: 15px 20px;
-  margin: 0 auto;
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 800;
-  cursor: pointer;
-  position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    background-color: black;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  > span {
-    display: inline-block;
-    transform: rotate(0deg);
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  &:hover {
-    &:before {
-      visibility: visible;
-      transform: scaleX(1);
-    }
-    > .rotate-left {
-      transform: rotate(270deg);
-    }
-    > .rotate-right {
-      transform: rotate(90deg);
-    }
-    > .rotate-up {
-      transform: rotate(360deg);
-    }
-    > .rotate-down {
-      transform: rotate(180deg);
     }
   }
 `;
@@ -203,7 +126,11 @@ export default class Landing extends Component {
     return (
       <Subscribe to={[AppContainer]}>
         {appState => (
-          <HeightContainer className="transition-item list-page">
+          <HeightContainer
+            className="transition-item list-page"
+            bgColor="peru"
+            bgImg="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/bird-bg.jpg"
+          >
             <FlexContainer>
               <Jumbotron>
                 <h1>Hi, I'm Gareth. I like to build stuff.</h1>
