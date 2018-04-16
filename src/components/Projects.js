@@ -9,6 +9,7 @@ import {
   FlexContainer,
   ContentContainer,
   RouteButton,
+  ToggleButton,
   CenterAdjust,
   DisplayInlineBlock,
   PrimaryText
@@ -20,12 +21,25 @@ export default class Projects extends Component {
   constructor() {
     super();
 
+    this.state = {
+      activeDisplay: 'Projects',
+      skillDisplay: false
+    };
+
     this.goToRoute = this.goToRoute.bind(this);
+    this.toggleSkillDisplay = this.toggleSkillDisplay.bind(this);
   }
 
   goToRoute(e) {
     this.props.history.push({
       pathname: e
+    });
+  }
+
+  toggleSkillDisplay() {
+    this.setState({
+      activeDisplay: this.state.skillDisplay ? 'Projects' : 'Skills',
+      skillDisplay: !this.state.skillDisplay
     });
   }
 
@@ -36,44 +50,15 @@ export default class Projects extends Component {
           <HeightContainer className="transition-item transitioned-component-right" bgColor="rgba(70, 130, 180, 0.75);">
             <FlexContainer>
               <ContentContainer>
-                <h1>~ Skills & Projects ~</h1>
                 <CenterAdjust>
-                  {/* <PrimaryText>
-                    Here are some tools I build with and things I have built with them. I consider myself fairly decent
-                    at picking up new tech and hope to see more pretty logos added here soon. I host on{' '}
-                    <a href="https://www.digitalocean.com/" target="_blank">
-                      DigitalOcean
-                    </a>.
-                  </PrimaryText>
-                  <PrimaryText>
-                    The eventual goal here is to have a list of projects filterable by skill. For now, you can click the
-                    toggle thing to switch between skills and projects.
-                  </PrimaryText>
-                  <PrimaryText>
-                    Currently in love with{' '}
-                    <a href="http://stylus-lang.com/" target="_blank">
-                      Stylus
-                    </a>{' '}
-                    (but{' '}
-                    <a href="https://sass-lang.com/" target="_blank">
-                      Sass
-                    </a>{' '}
-                    will always have a special place in my heart) and{' '}
-                    <a href="https://github.com/jamiebuilds/unstated" target="_blank">
-                      Unstated
-                    </a>{' '}
-                    (sorry,{' '}
-                    <a href="https://redux.js.org/" target="_blank">
-                      Redux
-                    </a>).
-                  </PrimaryText> */}
-                  <RouteButton onClick={appState.toggleSkillDisplay}>
-                    TOGGLE<span className="rotate-up">▲</span>
-                  </RouteButton>
+                  <ToggleButton onClick={this.toggleSkillDisplay}>
+                    <h1>{this.state.activeDisplay}</h1>
+                    <span className="rotate-down">▲</span>
+                  </ToggleButton>
                 </CenterAdjust>
                 <Grid>
                   <Row style={{ marginTop: '25px' }}>
-                    {appState.state.skillDisplay
+                    {this.state.skillDisplay
                       ? appState.state.skills.map((skill, i) => (
                           <Col key={i} xs={4} md={2}>
                             <LoneSkill img={skill.img} />
