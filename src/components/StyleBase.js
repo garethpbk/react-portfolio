@@ -5,7 +5,8 @@ export const HeightContainer = styled.div`
   min-height: 100vh;
   background-color: ${props => props.bgColor || 'peru'};
   background-image: url(${props => props.bgImg || ''});
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @media (min-width: 1024px) {
     height: 100vh;
@@ -102,5 +103,61 @@ export const RouteButton = styled.button`
     > .rotate-down {
       transform: rotate(180deg);
     }
+  }
+`;
+
+export const ToggleButton = styled.button`
+  border: 0px solid black;
+  //padding: 15px 20px;
+  margin: 0 auto;
+  display: block;
+  //text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  > span {
+    display: inline-block;
+    font-size: 2rem;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover {
+    &:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+    > .rotate-left {
+      transform: rotate(270deg);
+    }
+    > .rotate-right {
+      transform: rotate(90deg);
+    }
+    > .rotate-up {
+      transform: rotate(360deg);
+    }
+    > .rotate-down {
+      transform: rotate(180deg);
+    }
+  }
+
+  > h1 {
+    font-size: 3rem;
+    margin: 0 0.25rem 0 0;
+    display: inline-block;
   }
 `;

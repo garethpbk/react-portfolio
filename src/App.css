@@ -9,9 +9,11 @@
 }
 
 body {
+  min-height: 100vh;
   background-image: url('https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/bird-bg.jpg ');
   background-color: red;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1,
