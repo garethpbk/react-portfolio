@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Subscribe } from 'unstated';
-import styled from 'styled-components';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AppContainer from '../containers/AppContainer';
 
@@ -11,15 +10,13 @@ import {
   RouteButton,
   ToggleButton,
   CenterAdjust,
-  DisplayInlineBlock,
-  PrimaryText
+  DisplayInlineBlock
 } from './StyleBase';
 import LoneProject from './LoneProject';
 import LoneSkill from './LoneSkill';
-
 export default class Projects extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       activeDisplay: 'Projects',
@@ -56,21 +53,30 @@ export default class Projects extends Component {
                     <span className="rotate-down">▲</span>
                   </ToggleButton>
                 </CenterAdjust>
-                <Grid>
-                  <Row style={{ marginTop: '25px' }}>
-                    {this.state.skillDisplay
-                      ? appState.state.skills.map((skill, i) => (
-                          <Col key={i} xs={4} md={2}>
-                            <LoneSkill img={skill.img} />
-                          </Col>
-                        ))
-                      : appState.state.projects.map((project, i) => (
-                          <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
-                            <LoneProject name={project.name} desc={project.desc} img={project.img} url={project.url} />
-                          </Col>
-                        ))}
-                  </Row>
-                </Grid>
+                {this.props.projects ? (
+                  <Grid>
+                    <Row style={{ marginTop: '25px' }}>
+                      {this.state.skillDisplay
+                        ? appState.state.skills.map((skill, i) => (
+                            <Col key={i} xs={4} md={2}>
+                              <LoneSkill img={skill.img} />
+                            </Col>
+                          ))
+                        : this.props.projects.map((project, i) => (
+                            <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
+                              <LoneProject
+                                name={project.name}
+                                desc={project.desc}
+                                img={project.primary_image}
+                                url={project.url}
+                              />
+                            </Col>
+                          ))}
+                    </Row>
+                  </Grid>
+                ) : (
+                  ''
+                )}
                 <CenterAdjust>
                   <RouteButton
                     value="/"

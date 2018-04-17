@@ -3,15 +3,7 @@ import { Subscribe } from 'unstated';
 import styled from 'styled-components';
 import AppContainer from '../containers/AppContainer';
 
-import {
-  HeightContainer,
-  FlexContainer,
-  ContentContainer,
-  CenterAdjust,
-  DisplayInlineBlock,
-  PrimaryText,
-  RouteButton
-} from './StyleBase';
+import { HeightContainer, FlexContainer, RouteButton } from './StyleBase';
 
 const Jumbotron = styled.div`
   padding: 20px;

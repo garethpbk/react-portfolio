@@ -51,11 +51,11 @@ export default class About extends Component {
                         of modern web technology to build unique and accessible user experiences. Currently I work
                         primarily in React, but I'm looking to branch out into alternatives (and build more stuff in
                         plain ol' JS). I'm into{' '}
-                        <a href="https://mithril.js.org/" target="_blank">
+                        <a href="https://mithril.js.org/" target="_blank" rel="noopener noreferrer">
                           Mithril
                         </a>{' '}
                         at the moment because I love the syntax and am a Lord of the Rings nerd.{' '}
-                        <a href="https://svelte.technology/" target="_blank">
+                        <a href="https://svelte.technology/" target="_blank" rel="noopener noreferrer">
                           Svelte
                         </a>{' '}
                         is really intriguing me, and I'm stoked to see how it influences the future of front-end
@@ -63,11 +63,11 @@ export default class About extends Component {
                       </PrimaryText>
                       <PrimaryText>
                         For a long time I was a{' '}
-                        <a href="https://www.sublimetext.com/" target="_blank">
+                        <a href="https://www.sublimetext.com/" target="_blank" rel="noopener noreferrer">
                           Sublime Text
                         </a>{' '}
                         devotee, but recently made the switch to{' '}
-                        <a href="https://code.visualstudio.com/" target="_blank">
+                        <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
                           VS Code
                         </a>{' '}
                         and haven't looked back since. Good job Microsoft!
@@ -75,29 +75,37 @@ export default class About extends Component {
                       <PrimaryText>
                         When I'm not coding, I enjoy cooking, reading, and exercising. Running and cycling,
                         specifically. You can{' '}
-                        <a href="https://www.strava.com/athletes/3001031" target="_blank">
+                        <a href="https://www.strava.com/athletes/3001031" target="_blank" rel="noopener noreferrer">
                           find me on Strava
                         </a>{' '}
                         to see how I've been moving.{' '}
-                        <a href="https://www.goodreads.com/user/show/38372316-gareth-bk" target="_blank">
+                        <a
+                          href="https://www.goodreads.com/user/show/38372316-gareth-bk"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           Check out my Goodreads
                         </a>{' '}
                         to see all the books by old/dead white dudes I read (trying to diversify that).
                       </PrimaryText>
                       <PrimaryText>
                         I've been getting into JS game development via{' '}
-                        <a href="http://phaser.io/" target="_blank">
+                        <a href="http://phaser.io/" target="_blank" rel="noopener noreferrer">
                           Phase
                         </a>r and hope to have a (mostly) finished game up soon. It's called 9 Lives and is about a
                         flying laser cat. Inspired by Metroid, Castlevania, and Hollow Knight.
                       </PrimaryText>
                       <PrimaryText>
                         You'll find me on the usual{' '}
-                        <a href="https://github.com/garethpbk" target="_blank">
+                        <a href="https://github.com/garethpbk" target="_blank" rel="noopener noreferrer">
                           Github
                         </a>{' '}
                         and{' '}
-                        <a href="https://www.linkedin.com/in/gareth-bromser-kloeden-77b93745/" target="_blank">
+                        <a
+                          href="https://www.linkedin.com/in/gareth-bromser-kloeden-77b93745/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           LinkedIn
                         </a>. Working on getting those fancy icons you expect to see up soon.
                       </PrimaryText>
