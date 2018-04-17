@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Subscribe } from 'unstated';
-import styled from 'styled-components';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Grid, Row } from 'react-flexbox-grid';
 import AppContainer from '../containers/AppContainer';
 
 import {
@@ -40,14 +39,14 @@ export default class Contact extends Component {
                     <CenterAdjust>
                       <PrimaryText>
                         Currently accepting outreach via email:{' '}
-                        <a href={'mailto:' + appState.state.email} target="_blank">
+                        <a href={'mailto:' + appState.state.email} target="_blank" rel="noopener noreferrer">
                           garethbk@gmail.com
                         </a>{' '}
                         and telephone: <a href={'tel:' + appState.state.phone}>540 454 7597</a>.
                       </PrimaryText>
                       <PrimaryText>
                         I'll have some sort of automated form mailer here soon. Had a killer setup working with{' '}
-                        <a href="mailto:https://sendgrid.com/" target="_blank">
+                        <a href="mailto:https://sendgrid.com/" target="_blank" rel="noopener noreferrer">
                           SendGrid
                         </a>, but then they banned me because I accidentally pushed an api key to GitHub. Whoops.
                       </PrimaryText>

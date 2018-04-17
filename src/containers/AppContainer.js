@@ -26,65 +26,16 @@ class AppContainer extends Container {
         { skill: 'MongoDB', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/mongodb-logo.png' },
         { skill: 'MySQL', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/mysql-logo.png' },
         { skill: 'Photoshop', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/photoshop-logo.png' }
-      ],
-      projects: [
-        {
-          name: 'Origin Portal',
-          desc: 'Hired.com for bootcamp grads.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/origin-portal/origin-portal-landing.jpg',
-          url: 'https://origin-portal.herokuapp.com/'
-        },
-        {
-          name: 'Stravisualizer',
-          desc: 'Strava data visualizer.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/stravisualize/stravisualize.gif',
-          url: 'https://origin-hackathon-qipuplrkrg.now.sh/'
-        },
-        {
-          name: '9 Lives',
-          desc: 'A game about a cat.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/nine-lives/nine-lives.jpg',
-          url: 'https://github.com/garethpbk/catgame'
-        },
-        {
-          name: 'Hardywood Park Craft Brewery',
-          desc: 'WordPress brewery website.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/hardywood/hardywood.jpg',
-          url: 'https://new.hardywood.com/'
-        },
-        {
-          name: 'Metropolitan Educational Resource Consortium',
-          desc: 'T4 website for VCU School of Education.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/merc/merc.jpg',
-          url: 'https://merc.soe.vcu.edu'
-        },
-        {
-          name: 'College Emotional & Behavioral Health Insitute',
-          desc: 'WordPress website for VCU COBE.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/cobe/cobe.jpg',
-          url: 'http://cobe.vcu.edu'
-        },
-        {
-          name: 'Center for Teacher Leadership',
-          desc: 'T4 website for VCU School of Education.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/ctl/ctl.jpg',
-          url: 'http://ctl.staging.vcu.edu'
-        },
-        {
-          name: 'SMV Periodic Table',
-          desc: 'Periodic Table installed on a Microsoft Surface table at the Science Museum of Virginia.',
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/smv/smv-dev.gif',
-          url: 'https://www.youtube.com/watch?v=arzJ9rm6Vfo'
-        },
-        {
-          name: 'Foreign Language Association of Virginia',
-          desc: "Virginia's professional association for foreign language teachers.",
-          img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/projects/flava/flava.jpg',
-          url: 'https://flavaweb.org'
-        }
       ]
     };
   }
+
+  loadProjects = input => {
+    this.setState({
+      loadedProjects: input
+    });
+  };
+
   setRoute = input => {
     if (input === undefined) {
       input = '/';
