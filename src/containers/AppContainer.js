@@ -37,14 +37,13 @@ class AppContainer extends Container {
     });
   };
 
-  selectProject = (name, desc, img, url, bgColor) => {
+  selectProject = (name, desc, img, url) => {
     this.setState({
       loadedProject: {
         name: name,
         desc: desc,
         img: img,
-        url: url,
-        bgColor: bgColor
+        url: url
       }
     });
   };

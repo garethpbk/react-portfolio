@@ -45,12 +45,7 @@ export default class LoneProject extends Component {
   }
 
   mouseEnter() {
-    const colors = [0, 0, 0];
-    for (let i = 0; i < colors.length; i++) {
-      colors[i] = Math.floor(Math.random() * 255);
-    }
-    this.setState({ opacity: 1, bgColor: colors });
-    console.log(this.state);
+    this.setState({ opacity: 1 });
   }
 
   mouseLeave() {
@@ -71,13 +66,7 @@ export default class LoneProject extends Component {
             onMouseEnter={this.mouseEnter}
             onMouseLeave={this.mouseLeave}
             onClick={() => {
-              appState.selectProject(
-                this.props.name,
-                this.props.desc,
-                this.props.img,
-                this.props.url,
-                this.state.bgColor
-              );
+              appState.selectProject(this.props.name, this.props.desc, this.props.img, this.props.url);
               this.goToRoute();
             }}
           >

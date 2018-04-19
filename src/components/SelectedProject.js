@@ -8,19 +8,31 @@ import { HeightContainer, FlexContainer, ContentContainer, RouteButton, DisplayI
 export default class SelectedProject extends Component {
   constructor() {
     super();
-
+    this.state = {
+      bgColor: []
+    };
     this.goToRoute = this.goToRoute.bind(this);
   }
+
+  componentDidMount() {
+    const colors = [0, 0, 0];
+    for (let i = 0; i < colors.length; i++) {
+      colors[i] = Math.floor(Math.random() * 255);
+    }
+    this.setState({ bgColor: colors });
+  }
+
   goToRoute(e) {
     this.props.history.push({ pathname: e });
   }
+
   render() {
     return (
       <Subscribe to={[AppContainer]}>
         {appState => (
           <HeightContainer
             className="transition-item transitioned-component-right"
-            bgColor={'rgba(' + appState.state.loadedProject.bgColor + ', 0.75)'}
+            bgColor={'rgba(' + this.state.bgColor + ', 0.75)'}
           >
             <FlexContainer>
               <ContentContainer>
