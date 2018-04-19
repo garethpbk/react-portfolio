@@ -8,6 +8,7 @@ class AppContainer extends Container {
       email: 'garethbk@gmail.com',
       phone: '540 454 7597',
       loadedRoute: 'Home',
+      loadedProject: {},
       skillDisplay: false,
       about: { name: 'Gareth Bk', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/gbk-chicken.jpg' },
       skills: [
@@ -36,6 +37,18 @@ class AppContainer extends Container {
     });
   };
 
+  selectProject = (name, desc, img, url, bgColor) => {
+    this.setState({
+      loadedProject: {
+        name: name,
+        desc: desc,
+        img: img,
+        url: url,
+        bgColor: bgColor
+      }
+    });
+  };
+
   setRoute = input => {
     if (input === undefined) {
       input = '/';
@@ -49,7 +62,6 @@ class AppContainer extends Container {
   };
 
   toggleSkillDisplay = input => {
-    console.log('aye');
     this.setState({
       skillDisplay: !this.state.skillDisplay
     });

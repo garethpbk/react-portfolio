@@ -66,9 +66,10 @@ export default class Projects extends Component {
                             <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
                               <LoneProject
                                 name={project.name}
-                                desc={project.desc}
+                                desc={project.description}
                                 img={project.primary_image}
                                 url={project.url}
+                                history={this.props.history}
                               />
                             </Col>
                           ))}

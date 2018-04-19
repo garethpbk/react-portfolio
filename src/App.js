@@ -8,6 +8,7 @@ import Landing from './components/Landing';
 import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import SelectedProject from './components/SelectedProject';
 
 class App extends Component {
   constructor() {
@@ -48,6 +49,7 @@ class App extends Component {
                     <Route path="/about" component={About} />
                     <Route path="/projects" render={props => <Projects {...props} projects={this.state.projects} />} />
                     <Route path="/contact" component={Contact} />
+                    <Route path="/selectedproject" component={SelectedProject} />
                   </Switch>
                 </PageTransition>
               )}
