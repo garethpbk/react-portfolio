@@ -32,6 +32,10 @@ span {
   font-family: 'Work Sans', sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
 .transition-wrapper {
   position: relative;
   z-index: 1;
