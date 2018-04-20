@@ -12,6 +12,7 @@ import {
   CenterAdjust,
   DisplayInlineBlock
 } from './StyleBase';
+
 import LoneProject from './LoneProject';
 import LoneSkill from './LoneSkill';
 export default class Projects extends Component {
