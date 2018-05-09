@@ -21,11 +21,13 @@ export default class Projects extends Component {
 
     this.state = {
       activeDisplay: 'Projects',
-      skillDisplay: false
+      skillDisplay: false,
+      projectPageOne: true
     };
 
     this.goToRoute = this.goToRoute.bind(this);
     this.toggleSkillDisplay = this.toggleSkillDisplay.bind(this);
+    this.switchPage = this.switchPage.bind(this);
   }
 
   goToRoute(e) {
@@ -38,6 +40,12 @@ export default class Projects extends Component {
     this.setState({
       activeDisplay: this.state.skillDisplay ? 'Projects' : 'Skills',
       skillDisplay: !this.state.skillDisplay
+    });
+  }
+
+  switchPage() {
+    this.setState({
+      projectPageOne: !this.state.projectPageOne
     });
   }
 
@@ -63,18 +71,53 @@ export default class Projects extends Component {
                               <LoneSkill img={skill.img} />
                             </Col>
                           ))
-                        : this.props.projects.map((project, i) => (
-                            <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
-                              <LoneProject
-                                name={project.name}
-                                desc={project.description}
-                                img={project.primary_image}
-                                url={project.url}
-                                history={this.props.history}
-                              />
-                            </Col>
-                          ))}
+                        : this.props.projects.map(
+                            this.state.projectPageOne
+                              ? (project, i) =>
+                                  i < 9 ? (
+                                    <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
+                                      <LoneProject
+                                        name={project.name}
+                                        descOne={project.description_one}
+                                        descTwo={project.description_two}
+                                        descThree={project.description_three}
+                                        img={project.primary_image}
+                                        url={project.url}
+                                        githubUrl={project.github_url}
+                                        images={project.images}
+                                        history={this.props.history}
+                                      />
+                                    </Col>
+                                  ) : (
+                                    ''
+                                  )
+                              : (project, i) =>
+                                  i > 8 ? (
+                                    <Col key={i} xs={6} md={4} style={{ marginTop: '10px' }}>
+                                      <LoneProject
+                                        name={project.name}
+                                        descOne={project.description_one}
+                                        descTwo={project.description_two}
+                                        descThree={project.description_three}
+                                        img={project.primary_image}
+                                        url={project.url}
+                                        githubUrl={project.github_url}
+                                        images={project.images}
+                                        history={this.props.history}
+                                      />
+                                    </Col>
+                                  ) : (
+                                    ''
+                                  )
+                          )}
                     </Row>
+                    <CenterAdjust>
+                      {this.state.skillDisplay ? (
+                        ''
+                      ) : (
+                        <RouteButton onClick={this.switchPage}>More Projects</RouteButton>
+                      )}
+                    </CenterAdjust>
                   </Grid>
                 ) : (
                   ''

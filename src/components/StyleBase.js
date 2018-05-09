@@ -38,6 +38,10 @@ export const ContentContainer = styled.div`
 export const CenterAdjust = styled.div`
   text-align: center;
   width: 100%;
+
+  > img {
+    cursor: pointer;
+  }
 `;
 
 export const DisplayInlineBlock = {
@@ -159,5 +163,21 @@ export const ToggleButton = styled.button`
     font-size: 3rem;
     margin: 0 0.25rem 0 0;
     display: inline-block;
+  }
+`;
+
+export const SlideSwitch = styled.span`
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 10px 10px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid steelblue;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.5s all;
+
+  &:hover {
+    background-color: steelblue !important;
   }
 `;

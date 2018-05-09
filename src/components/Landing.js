@@ -73,7 +73,7 @@ const SmallLogo = styled.img`
 `;
 
 const SmallLink = styled.a`
-  color: slategrey;
+  color: #41b883;
   text-decoration: none;
   font-weight: 800;
   display: inline-block;
@@ -85,7 +85,7 @@ const SmallLink = styled.a`
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: slategrey;
+    background-color: #35495e;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
@@ -96,7 +96,7 @@ const SmallLink = styled.a`
       transform: scaleX(1);
     }
     > img {
-      filter: contrast(0);
+      filter: saturate(25%);
     }
   }
 `;
@@ -145,11 +145,11 @@ export default class Landing extends Component {
                 <p>
                   My favorite CSS color is
                   <SpanSteelBlue> steelblue</SpanSteelBlue>, and I'm currently attempting to learn{' '}
-                  <SmallLink href="https://mithril.js.org/" target="_blank">
-                    Mithril{' '}
+                  <SmallLink href="https://vuejs.org/" target="_blank">
+                    Vue.js{' '}
                     <SmallLogo
-                      src="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/mithril-logo.svg"
-                      alt="Mithril"
+                      src="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/vuejs-logo.png"
+                      alt="VueJS"
                     />
                   </SmallLink>.
                 </p>
@@ -161,7 +161,7 @@ export default class Landing extends Component {
                     appState.setRoute(event.target.value);
                   }}
                 >
-                  See my stack and work <span className="rotate-right">▲</span>
+                  See my projects & skills <span className="rotate-right">▲</span>
                 </RouteButton>
 
                 <RouteButton
@@ -191,56 +191,3 @@ export default class Landing extends Component {
     );
   }
 }
-//export default Landing;
-
-/* export default class Landing extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      title: "I'm Gareth.  I like to build stuff.",
-      tagline: 'I get excited about cooking, running, cycling, reading, and JavaScript. My favorite CSS color is ',
-      email: 'garethbk@gmail.com',
-      phone: '540 454 7597'
-    };
-
-    this.goToContact = this.goToContact.bind(this);
-    this.goToProjects = this.goToProjects.bind(this);
-  }
-
-  goToContact() {
-    this.props.history.push({
-      pathname: '/contact'
-    });
-  }
-
-  goToProjects() {
-    this.props.history.push({
-      pathname: '/projects'
-    });
-  }
-
-  render() {
-    return (
-      <HeightContainer className="transition-item list-page">
-        <FlexContainer>
-          <Jumbotron>
-            <h1>{this.state.title}</h1>
-            <p>
-              {this.state.tagline}
-              <SpanSteelBlue>steelblue</SpanSteelBlue>.
-            </p>
-            <div className="contact">
-              <UpperCaseP>
-                {this.state.email} | {this.state.phone}
-              </UpperCaseP>
-            </div>
-            <button onClick={this.goToContact}>:::- Contact</button>
-            <button onClick={this.goToProjects}>Projects -:::</button>
-          </Jumbotron>
-        </FlexContainer>
-      </HeightContainer>
-    );
-  }
-}
- */

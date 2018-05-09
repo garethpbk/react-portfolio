@@ -66,7 +66,16 @@ export default class LoneProject extends Component {
             onMouseEnter={this.mouseEnter}
             onMouseLeave={this.mouseLeave}
             onClick={() => {
-              appState.selectProject(this.props.name, this.props.desc, this.props.img, this.props.url);
+              appState.selectProject(
+                this.props.name,
+                this.props.descOne,
+                this.props.descTwo,
+                this.props.descThree,
+                this.props.img,
+                this.props.url,
+                this.props.githubUrl,
+                this.props.images
+              );
               this.goToRoute();
             }}
           >
