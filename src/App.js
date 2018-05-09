@@ -24,9 +24,13 @@ class App extends Component {
         const loadedProjects = projects.map(project => {
           return {
             name: project.title.rendered,
-            description: project.acf.description,
+            description_one: project.acf.description_one,
+            description_two: project.acf.description_two,
+            description_three: project.acf.description_three,
             primary_image: project.acf.primary_image,
-            url: project.acf.url
+            url: project.acf.url,
+            github_url: project.acf.github_url,
+            images: project.acf.images
           };
         });
         this.setState({

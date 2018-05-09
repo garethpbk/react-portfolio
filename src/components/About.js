@@ -19,6 +19,17 @@ const AboutImage = styled.img`
   border: 5px solid rgba(255, 255, 255, 0.75);
 `;
 
+const SmallIcon = styled.img`
+  width: 35px;
+  display: inline-block;
+  margin: 25px 15px;
+  padding: 10px;
+
+  &:hover {
+    filter: invert(50%);
+  }
+`;
+
 export default class About extends Component {
   constructor() {
     super();
@@ -50,16 +61,7 @@ export default class About extends Component {
                         Born and raised in Northern Virginia, I'm now located in San Diego. I enjoy utilizing the power
                         of modern web technology to build unique and accessible user experiences. Currently I work
                         primarily in React, but I'm looking to branch out into alternatives (and build more stuff in
-                        plain ol' JS). I'm into{' '}
-                        <a href="https://mithril.js.org/" target="_blank" rel="noopener noreferrer">
-                          Mithril
-                        </a>{' '}
-                        at the moment because I love the syntax and am a Lord of the Rings nerd.{' '}
-                        <a href="https://svelte.technology/" target="_blank" rel="noopener noreferrer">
-                          Svelte
-                        </a>{' '}
-                        is really intriguing me, and I'm stoked to see how it influences the future of front-end
-                        development.
+                        plain ol' JS).
                       </PrimaryText>
                       <PrimaryText>
                         For a long time I was a{' '}
@@ -89,30 +91,36 @@ export default class About extends Component {
                         to see all the books by old/dead white dudes I read (trying to diversify that).
                       </PrimaryText>
                       <PrimaryText>
-                        I've been getting into JS game development via{' '}
-                        <a href="http://phaser.io/" target="_blank" rel="noopener noreferrer">
-                          Phase
-                        </a>r and hope to have a (mostly) finished game up soon. It's called 9 Lives and is about a
-                        flying laser cat. Inspired by Metroid, Castlevania, and Hollow Knight.
-                      </PrimaryText>
-                      <PrimaryText>
-                        You'll find me on the usual{' '}
-                        <a href="https://github.com/garethpbk" target="_blank" rel="noopener noreferrer">
-                          Github
-                        </a>{' '}
-                        and{' '}
-                        <a
-                          href="https://www.linkedin.com/in/gareth-bromser-kloeden-77b93745/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          LinkedIn
-                        </a>. Working on getting those fancy icons you expect to see up soon.
-                      </PrimaryText>
-                      <PrimaryText>
                         At home I have two cats and the world's best partner. Hit me up if you're in the San Diego area
                         and want to talk development. I'll cook you dinner.
                       </PrimaryText>
+                      <PrimaryText>Find me on the usual haunts, or download my resume -</PrimaryText>
+                      <a
+                        href="https://www.linkedin.com/in/gareth-bromser-kloeden-77b93745/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <SmallIcon
+                          src="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/icons/linkedin.svg"
+                          alt="LinkedIn - icon by Icomoon"
+                        />
+                      </a>
+                      <a href="https://github.com/garethpbk" target="_blank" rel="noopener noreferrer">
+                        <SmallIcon
+                          src="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/icons/github.svg"
+                          alt="Github - icon by Icomoon"
+                        />
+                      </a>
+                      <a
+                        href="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/gbk-resume-blue-180508.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <SmallIcon
+                          src="https://s3.us-east-2.amazonaws.com/garethbk-portfolio/icons/profile.svg"
+                          alt="Resume - icon by Icomoon"
+                        />
+                      </a>
                     </Col>
                   </Row>
                 </Grid>

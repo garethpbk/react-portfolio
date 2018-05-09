@@ -8,7 +8,19 @@ class AppContainer extends Container {
       email: 'garethbk@gmail.com',
       phone: '540 454 7597',
       loadedRoute: 'Home',
-      loadedProject: {},
+      loadedProjects: [],
+      loadedProject: {
+        name: 'Nothing Here!',
+        desc: {
+          0: 'You have found a route with no info!',
+          1: 'Go ahead and go back.',
+          2: 'There is nothing to see here...'
+        },
+        img: 'N/A',
+        url: '../../',
+        github_url: '',
+        images: [1, 2, 3]
+      },
       skillDisplay: false,
       about: { name: 'Gareth Bk', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/misc/gbk-chicken.jpg' },
       skills: [
@@ -20,7 +32,6 @@ class AppContainer extends Container {
         { skill: 'Node', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/nodejs-logo.png' },
         { skill: 'React', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/react-logo.png' },
         { skill: 'Redux', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/redux-logo.png' },
-        { skill: 'Unstated', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/unstated-logo.png' },
         { skill: 'WordPress', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/wordpress-logo.png' },
         { skill: 'PHP', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/php-logo.png' },
         { skill: 'Phaser', img: 'https://s3.us-east-2.amazonaws.com/garethbk-portfolio/logos/phaser-logo.png' },
@@ -31,21 +42,22 @@ class AppContainer extends Container {
     };
   }
 
-  loadProjects = input => {
-    this.setState({
-      loadedProjects: input
-    });
-  };
-
-  selectProject = (name, desc, img, url) => {
+  selectProject = (name, desc_one, desc_two, desc_three, img, url, github_url, images) => {
     this.setState({
       loadedProject: {
         name: name,
-        desc: desc,
+        desc: {
+          0: desc_one,
+          1: desc_two,
+          2: desc_three
+        },
         img: img,
-        url: url
+        url: url,
+        github_url: github_url,
+        images: images
       }
     });
+    console.log(this.state.loadedProject);
   };
 
   setRoute = input => {
