@@ -10,7 +10,7 @@ import {
   RouteButton,
   ToggleButton,
   CenterAdjust,
-  DisplayInlineBlock
+  DisplayInlineBlock,
 } from './StyleBase';
 
 import LoneProject from './LoneProject';
@@ -22,7 +22,11 @@ export default class Projects extends Component {
     this.state = {
       activeDisplay: 'Projects',
       skillDisplay: false,
-      projectPageOne: true
+      projectPageOne: true,
+      todo: {
+        id: 1,
+        text: '',
+      },
     };
 
     this.goToRoute = this.goToRoute.bind(this);
@@ -30,22 +34,30 @@ export default class Projects extends Component {
     this.switchPage = this.switchPage.bind(this);
   }
 
+  componentDidMount() {
+    let updatedTodo = { ...this.state.todo };
+    updatedTodo.text = 'Here is some text';
+    this.setState({
+      todo: updatedTodo,
+    });
+  }
+
   goToRoute(e) {
     this.props.history.push({
-      pathname: e
+      pathname: e,
     });
   }
 
   toggleSkillDisplay() {
     this.setState({
       activeDisplay: this.state.skillDisplay ? 'Projects' : 'Skills',
-      skillDisplay: !this.state.skillDisplay
+      skillDisplay: !this.state.skillDisplay,
     });
   }
 
   switchPage() {
     this.setState({
-      projectPageOne: !this.state.projectPageOne
+      projectPageOne: !this.state.projectPageOne,
     });
   }
 
